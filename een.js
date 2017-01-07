@@ -103,5 +103,3 @@ const een = function een( array, value, comparator ){
 };
 
 module.exports = een;
-
-console.log( een( [ 1,2,3], 1 ) );
