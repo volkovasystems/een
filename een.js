@@ -34,6 +34,9 @@
 			"file": "een.js",
 			"module": "een",
 			"author": "Richeve S. Bebedor",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+			],
 			"eMail": "richeve.bebedor@gmail.com",
 			"repository": "https://github.com/volkovasystems/een.git",
 			"test": "een-test.js",
