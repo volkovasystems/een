@@ -1,18 +1,30 @@
 "use strict";
 
 const webpack = require( "webpack" );
-const ResolverPlugin = webpack.ResolverPlugin;
-const DirectoryDescriptionFilePlugin = ResolverPlugin.DirectoryDescriptionFilePlugin;
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 module.exports = {
 	"entry": "./een.support.js",
 	"resolve": {
-		"modulesDirectories": [ "bower_components", "node_modules" ]
+		"descriptionFiles": [
+			"bower.json",
+			"package.json"
+		],
+		"modules": [
+			"bower_components",
+			"node_modules"
+		],
+		"mainFields": [
+			"support",
+			"browser",
+			"module",
+			"main"
+		]
 	},
 	"module": {
-		"preLoaders": [
+		"rules": [
 			{
+				"enforce": "pre",
 				"test": /\.support\.js$/,
 				"loader": "source-map-loader"
 			}
@@ -24,14 +36,16 @@ module.exports = {
 		"filename": "een.deploy.js"
 	},
 	"plugins": [
-		new ResolverPlugin( new DirectoryDescriptionFilePlugin( "bower.json", [ "support" ] ) ),
-		new ResolverPlugin( new DirectoryDescriptionFilePlugin( ".bower.json", [ "main" ] ) ),
 		new UglifyJsPlugin( {
-			"compress": { "warnings": false },
+			"compress": {
+				"keep_fargs": true,
+				"keep_fnames": true,
+				"warnings": false
+			},
 			"comments": false,
 			"sourceMap": true,
 			"mangle": false
 		} )
 	],
-	"devtool": "#inline-source-map"
+	"devtool": "#cheap-module-inline-source-map"
 };
