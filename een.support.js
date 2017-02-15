@@ -1,62 +1,62 @@
 "use strict";
 
 /*;
-	@module-license:
-		The MIT License (MIT)
-		@mit-license
-
-		Copyright (@c) 2017 Richeve Siodina Bebedor
-		@email: richeve.bebedor@gmail.com
-
-		Permission is hereby granted, free of charge, to any person obtaining a copy
-		of this software and associated documentation files (the "Software"), to deal
-		in the Software without restriction, including without limitation the rights
-		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-		copies of the Software, and to permit persons to whom the Software is
-		furnished to do so, subject to the following conditions:
-
-		The above copyright notice and this permission notice shall be included in all
-		copies or substantial portions of the Software.
-
-		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-		SOFTWARE.
-	@end-module-license
-
-	@module-configuration:
-		{
-			"package": "een",
-			"path": "een/een.js",
-			"file": "een.js",
-			"module": "een",
-			"author": "Richeve S. Bebedor",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-			],
-			"eMail": "richeve.bebedor@gmail.com",
-			"repository": "https://github.com/volkovasystems/een.git",
-			"test": "een-test.js",
-			"global": true
-		}
-	@end-module-configuration
-
-	@module-documentation:
-		Checks if array contains the given value.
-	@end-module-documentation
-
-	@include:
-		{
-			"doubt": "doubt",
-			"kein": "kein",
-			"protype": "protype",
-			"truly": "truly"
-		}
-	@end-include
-*/
+              	@module-license:
+              		The MIT License (MIT)
+              		@mit-license
+              
+              		Copyright (@c) 2017 Richeve Siodina Bebedor
+              		@email: richeve.bebedor@gmail.com
+              
+              		Permission is hereby granted, free of charge, to any person obtaining a copy
+              		of this software and associated documentation files (the "Software"), to deal
+              		in the Software without restriction, including without limitation the rights
+              		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+              		copies of the Software, and to permit persons to whom the Software is
+              		furnished to do so, subject to the following conditions:
+              
+              		The above copyright notice and this permission notice shall be included in all
+              		copies or substantial portions of the Software.
+              
+              		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+              		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+              		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+              		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+              		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+              		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+              		SOFTWARE.
+              	@end-module-license
+              
+              	@module-configuration:
+              		{
+              			"package": "een",
+              			"path": "een/een.js",
+              			"file": "een.js",
+              			"module": "een",
+              			"author": "Richeve S. Bebedor",
+              			"contributors": [
+              				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+              			],
+              			"eMail": "richeve.bebedor@gmail.com",
+              			"repository": "https://github.com/volkovasystems/een.git",
+              			"test": "een-test.js",
+              			"global": true
+              		}
+              	@end-module-configuration
+              
+              	@module-documentation:
+              		Checks if array contains the given value.
+              	@end-module-documentation
+              
+              	@include:
+              		{
+              			"doubt": "doubt",
+              			"kein": "kein",
+              			"protype": "protype",
+              			"truly": "truly"
+              		}
+              	@end-include
+              */
 
 var doubt = require("doubt");
 var kein = require("kein");
@@ -65,35 +65,24 @@ var truly = require("truly");
 
 //; @support-module:
 //: @reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
-Array.prototype.some = Array.prototype.some || function (evaluator, thisArg) {
-	"use strict";
-
+Array.prototype.some = Array.prototype.some || function (evaluator, thisArg) {"use strict";
 	if (!this) throw new TypeError("Array.prototype.some called on null or undefined");
-	if ("function" != typeof evaluator) {
-		if ("string" != typeof evaluator) throw new TypeError();
-		if (!(evaluator = eval(evaluator))) throw new TypeError();
-	}var i;
-	if (void 0 === thisArg) {
-		for (i in this) {
-			if (evaluator(this[i], i, this)) return !0;
-		}return !1;
-	}
-	for (i in this) {
-		if (evaluator.call(thisArg, this[i], i, this)) return !0;
-	}return !1;
-};
+	if ("function" != typeof evaluator) {if ("string" != typeof evaluator) throw new TypeError();
+		if (!(evaluator = eval(evaluator))) throw new TypeError();}var i;
+	if (void 0 === thisArg) {for (i in this) {if (evaluator(this[i], i, this)) return !0;}return !1;}
+	for (i in this) {if (evaluator.call(thisArg, this[i], i, this)) return !0;}return !1;};
 //; @end-support-module
 
 var een = function een(array, value, comparator) {
 	/*;
- 	@meta-configuration:
- 		{
- 			"array:required": "Array",
- 			"value:required": "*",
- 			"comparator": "function"
- 		}
- 	@end-meta-configuration
- */
+                                                  	@meta-configuration:
+                                                  		{
+                                                  			"array:required": "Array",
+                                                  			"value:required": "*",
+                                                  			"comparator": "function"
+                                                  		}
+                                                  	@end-meta-configuration
+                                                  */
 
 	if (!doubt(array, AS_ARRAY)) {
 		throw new Error("invalid array");
@@ -117,4 +106,5 @@ var een = function een(array, value, comparator) {
 };
 
 module.exports = een;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVlbi5qcyJdLCJuYW1lcyI6WyJkb3VidCIsInJlcXVpcmUiLCJrZWluIiwicHJvdHlwZSIsInRydWx5IiwiQXJyYXkiLCJwcm90b3R5cGUiLCJzb21lIiwiZXZhbHVhdG9yIiwidGhpc0FyZyIsIlR5cGVFcnJvciIsImV2YWwiLCJpIiwiY2FsbCIsImVlbiIsImFycmF5IiwidmFsdWUiLCJjb21wYXJhdG9yIiwiQVNfQVJSQVkiLCJFcnJvciIsIkZVTkNUSU9OIiwiaXRlbSIsIk9CSkVDVCIsInRvU3RyaW5nIiwiaW5kZXgiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFFQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQTBEQSxJQUFNQSxRQUFRQyxRQUFTLE9BQVQsQ0FBZDtBQUNBLElBQU1DLE9BQU9ELFFBQVMsTUFBVCxDQUFiO0FBQ0EsSUFBTUUsVUFBVUYsUUFBUyxTQUFULENBQWhCO0FBQ0EsSUFBTUcsUUFBUUgsUUFBUyxPQUFULENBQWQ7O0FBRUE7QUFDQztBQUNBSSxNQUFNQyxTQUFOLENBQWdCQyxJQUFoQixHQUFxQkYsTUFBTUMsU0FBTixDQUFnQkMsSUFBaEIsSUFBc0IsVUFBU0MsU0FBVCxFQUFtQkMsT0FBbkIsRUFBMkI7QUFBQzs7QUFDdkUsS0FBRyxDQUFDLElBQUosRUFBUyxNQUFNLElBQUlDLFNBQUosQ0FBYyxrREFBZCxDQUFOO0FBQ1QsS0FBRyxjQUFZLE9BQU9GLFNBQXRCLEVBQWdDO0FBQUMsTUFBRyxZQUFVLE9BQU9BLFNBQXBCLEVBQThCLE1BQU0sSUFBSUUsU0FBSixFQUFOO0FBQy9ELE1BQUcsRUFBRUYsWUFBVUcsS0FBS0gsU0FBTCxDQUFaLENBQUgsRUFBZ0MsTUFBTSxJQUFJRSxTQUFKLEVBQU47QUFBb0IsTUFBSUUsQ0FBSjtBQUNwRCxLQUFHLEtBQUssQ0FBTCxLQUFTSCxPQUFaLEVBQW9CO0FBQUMsT0FBSUcsQ0FBSixJQUFTLElBQVQ7QUFBYyxPQUFHSixVQUFVLEtBQUtJLENBQUwsQ0FBVixFQUFrQkEsQ0FBbEIsRUFBb0IsSUFBcEIsQ0FBSCxFQUE2QixPQUFNLENBQUMsQ0FBUDtBQUEzQyxHQUFvRCxPQUFNLENBQUMsQ0FBUDtBQUFTO0FBQ2xGLE1BQUlBLENBQUosSUFBUyxJQUFUO0FBQWMsTUFBR0osVUFBVUssSUFBVixDQUFlSixPQUFmLEVBQXVCLEtBQUtHLENBQUwsQ0FBdkIsRUFBK0JBLENBQS9CLEVBQWlDLElBQWpDLENBQUgsRUFBMEMsT0FBTSxDQUFDLENBQVA7QUFBeEQsRUFBaUUsT0FBTSxDQUFDLENBQVA7QUFBUyxDQUwxRTtBQU1EOztBQUVBLElBQU1FLE1BQU0sU0FBU0EsR0FBVCxDQUFjQyxLQUFkLEVBQXFCQyxLQUFyQixFQUE0QkMsVUFBNUIsRUFBd0M7QUFDbkQ7Ozs7Ozs7Ozs7QUFVQSxLQUFJLENBQUNqQixNQUFPZSxLQUFQLEVBQWNHLFFBQWQsQ0FBTCxFQUErQjtBQUM5QixRQUFNLElBQUlDLEtBQUosQ0FBVyxlQUFYLENBQU47QUFDQTs7QUFFRCxLQUFJZixNQUFPYSxVQUFQLEtBQXVCLENBQUNkLFFBQVNjLFVBQVQsRUFBcUJHLFFBQXJCLENBQTVCLEVBQTZEO0FBQzVELFFBQU0sSUFBSUQsS0FBSixDQUFXLG9CQUFYLENBQU47QUFDQTs7QUFFREYsY0FBYUEsY0FBYyxTQUFTQSxVQUFULENBQXFCSSxJQUFyQixFQUEyQkwsS0FBM0IsRUFBa0M7QUFDNUQsTUFBSWIsUUFBU2tCLElBQVQsRUFBZUMsTUFBZixLQUEyQnBCLEtBQU1tQixJQUFOLEVBQVksVUFBWixDQUEzQixJQUF1RG5CLEtBQU1jLEtBQU4sRUFBYSxVQUFiLENBQTNELEVBQXNGO0FBQ3JGLFVBQU9LLEtBQUtFLFFBQUwsT0FBcUJQLE1BQU1PLFFBQU4sRUFBckIsSUFBMENGLFNBQVNMLEtBQTFEO0FBQ0E7O0FBRUQsU0FBT0ssU0FBU0wsS0FBaEI7QUFDQSxFQU5EOztBQVFBLFFBQU9ELE1BQU1SLElBQU4sQ0FBWSxVQUFFYyxJQUFGLEVBQVFHLEtBQVIsRUFBbUI7QUFDckMsU0FBT1AsV0FBWUksSUFBWixFQUFrQkwsS0FBbEIsRUFBeUJRLEtBQXpCLENBQVA7QUFDQSxFQUZNLENBQVA7QUFHQSxDQTlCRDs7QUFnQ0FDLE9BQU9DLE9BQVAsR0FBaUJaLEdBQWpCIiwiZmlsZSI6ImVlbi5qcyIsInNvdXJjZXNDb250ZW50IjpbIlwidXNlIHN0cmljdFwiO1xuXG4vKjtcblx0QG1vZHVsZS1saWNlbnNlOlxuXHRcdFRoZSBNSVQgTGljZW5zZSAoTUlUKVxuXHRcdEBtaXQtbGljZW5zZVxuXG5cdFx0Q29weXJpZ2h0IChAYykgMjAxNyBSaWNoZXZlIFNpb2RpbmEgQmViZWRvclxuXHRcdEBlbWFpbDogcmljaGV2ZS5iZWJlZG9yQGdtYWlsLmNvbVxuXG5cdFx0UGVybWlzc2lvbiBpcyBoZXJlYnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFueSBwZXJzb24gb2J0YWluaW5nIGEgY29weVxuXHRcdG9mIHRoaXMgc29mdHdhcmUgYW5kIGFzc29jaWF0ZWQgZG9jdW1lbnRhdGlvbiBmaWxlcyAodGhlIFwiU29mdHdhcmVcIiksIHRvIGRlYWxcblx0XHRpbiB0aGUgU29mdHdhcmUgd2l0aG91dCByZXN0cmljdGlvbiwgaW5jbHVkaW5nIHdpdGhvdXQgbGltaXRhdGlvbiB0aGUgcmlnaHRzXG5cdFx0dG8gdXNlLCBjb3B5LCBtb2RpZnksIG1lcmdlLCBwdWJsaXNoLCBkaXN0cmlidXRlLCBzdWJsaWNlbnNlLCBhbmQvb3Igc2VsbFxuXHRcdGNvcGllcyBvZiB0aGUgU29mdHdhcmUsIGFuZCB0byBwZXJtaXQgcGVyc29ucyB0byB3aG9tIHRoZSBTb2Z0d2FyZSBpc1xuXHRcdGZ1cm5pc2hlZCB0byBkbyBzbywgc3ViamVjdCB0byB0aGUgZm9sbG93aW5nIGNvbmRpdGlvbnM6XG5cblx0XHRUaGUgYWJvdmUgY29weXJpZ2h0IG5vdGljZSBhbmQgdGhpcyBwZXJtaXNzaW9uIG5vdGljZSBzaGFsbCBiZSBpbmNsdWRlZCBpbiBhbGxcblx0XHRjb3BpZXMgb3Igc3Vic3RhbnRpYWwgcG9ydGlvbnMgb2YgdGhlIFNvZnR3YXJlLlxuXG5cdFx0VEhFIFNPRlRXQVJFIElTIFBST1ZJREVEIFwiQVMgSVNcIiwgV0lUSE9VVCBXQVJSQU5UWSBPRiBBTlkgS0lORCwgRVhQUkVTUyBPUlxuXHRcdElNUExJRUQsIElOQ0xVRElORyBCVVQgTk9UIExJTUlURUQgVE8gVEhFIFdBUlJBTlRJRVMgT0YgTUVSQ0hBTlRBQklMSVRZLFxuXHRcdEZJVE5FU1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQT1NFIEFORCBOT05JTkZSSU5HRU1FTlQuIElOIE5PIEVWRU5UIFNIQUxMIFRIRVxuXHRcdEFVVEhPUlMgT1IgQ09QWVJJR0hUIEhPTERFUlMgQkUgTElBQkxFIEZPUiBBTlkgQ0xBSU0sIERBTUFHRVMgT1IgT1RIRVJcblx0XHRMSUFCSUxJVFksIFdIRVRIRVIgSU4gQU4gQUNUSU9OIE9GIENPTlRSQUNULCBUT1JUIE9SIE9USEVSV0lTRSwgQVJJU0lORyBGUk9NLFxuXHRcdE9VVCBPRiBPUiBJTiBDT05ORUNUSU9OIFdJVEggVEhFIFNPRlRXQVJFIE9SIFRIRSBVU0UgT1IgT1RIRVIgREVBTElOR1MgSU4gVEhFXG5cdFx0U09GVFdBUkUuXG5cdEBlbmQtbW9kdWxlLWxpY2Vuc2VcblxuXHRAbW9kdWxlLWNvbmZpZ3VyYXRpb246XG5cdFx0e1xuXHRcdFx0XCJwYWNrYWdlXCI6IFwiZWVuXCIsXG5cdFx0XHRcInBhdGhcIjogXCJlZW4vZWVuLmpzXCIsXG5cdFx0XHRcImZpbGVcIjogXCJlZW4uanNcIixcblx0XHRcdFwibW9kdWxlXCI6IFwiZWVuXCIsXG5cdFx0XHRcImF1dGhvclwiOiBcIlJpY2hldmUgUy4gQmViZWRvclwiLFxuXHRcdFx0XCJjb250cmlidXRvcnNcIjogW1xuXHRcdFx0XHRcIkpvaG4gTGVub24gTWFnaGFub3kgPGpvaG5sZW5vbm1hZ2hhbm95QGdtYWlsLmNvbT5cIlxuXHRcdFx0XSxcblx0XHRcdFwiZU1haWxcIjogXCJyaWNoZXZlLmJlYmVkb3JAZ21haWwuY29tXCIsXG5cdFx0XHRcInJlcG9zaXRvcnlcIjogXCJodHRwczovL2dpdGh1Yi5jb20vdm9sa292YXN5c3RlbXMvZWVuLmdpdFwiLFxuXHRcdFx0XCJ0ZXN0XCI6IFwiZWVuLXRlc3QuanNcIixcblx0XHRcdFwiZ2xvYmFsXCI6IHRydWVcblx0XHR9XG5cdEBlbmQtbW9kdWxlLWNvbmZpZ3VyYXRpb25cblxuXHRAbW9kdWxlLWRvY3VtZW50YXRpb246XG5cdFx0Q2hlY2tzIGlmIGFycmF5IGNvbnRhaW5zIHRoZSBnaXZlbiB2YWx1ZS5cblx0QGVuZC1tb2R1bGUtZG9jdW1lbnRhdGlvblxuXG5cdEBpbmNsdWRlOlxuXHRcdHtcblx0XHRcdFwiZG91YnRcIjogXCJkb3VidFwiLFxuXHRcdFx0XCJrZWluXCI6IFwia2VpblwiLFxuXHRcdFx0XCJwcm90eXBlXCI6IFwicHJvdHlwZVwiLFxuXHRcdFx0XCJ0cnVseVwiOiBcInRydWx5XCJcblx0XHR9XG5cdEBlbmQtaW5jbHVkZVxuKi9cblxuY29uc3QgZG91YnQgPSByZXF1aXJlKCBcImRvdWJ0XCIgKTtcbmNvbnN0IGtlaW4gPSByZXF1aXJlKCBcImtlaW5cIiApO1xuY29uc3QgcHJvdHlwZSA9IHJlcXVpcmUoIFwicHJvdHlwZVwiICk7XG5jb25zdCB0cnVseSA9IHJlcXVpcmUoIFwidHJ1bHlcIiApO1xuXG4vLzsgQHN1cHBvcnQtbW9kdWxlOlxuXHQvLzogQHJlZmVyZW5jZTogaHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvSmF2YVNjcmlwdC9SZWZlcmVuY2UvR2xvYmFsX09iamVjdHMvQXJyYXkvc29tZVxuXHRBcnJheS5wcm90b3R5cGUuc29tZT1BcnJheS5wcm90b3R5cGUuc29tZXx8ZnVuY3Rpb24oZXZhbHVhdG9yLHRoaXNBcmcpe1widXNlIHN0cmljdFwiO1xuXHRpZighdGhpcyl0aHJvdyBuZXcgVHlwZUVycm9yKFwiQXJyYXkucHJvdG90eXBlLnNvbWUgY2FsbGVkIG9uIG51bGwgb3IgdW5kZWZpbmVkXCIpO1xuXHRpZihcImZ1bmN0aW9uXCIhPXR5cGVvZiBldmFsdWF0b3Ipe2lmKFwic3RyaW5nXCIhPXR5cGVvZiBldmFsdWF0b3IpdGhyb3cgbmV3IFR5cGVFcnJvcjtcblx0aWYoIShldmFsdWF0b3I9ZXZhbChldmFsdWF0b3IpKSl0aHJvdyBuZXcgVHlwZUVycm9yfXZhciBpO1xuXHRpZih2b2lkIDA9PT10aGlzQXJnKXtmb3IoaSBpbiB0aGlzKWlmKGV2YWx1YXRvcih0aGlzW2ldLGksdGhpcykpcmV0dXJuITA7cmV0dXJuITF9XG5cdGZvcihpIGluIHRoaXMpaWYoZXZhbHVhdG9yLmNhbGwodGhpc0FyZyx0aGlzW2ldLGksdGhpcykpcmV0dXJuITA7cmV0dXJuITF9O1xuLy87IEBlbmQtc3VwcG9ydC1tb2R1bGVcblxuY29uc3QgZWVuID0gZnVuY3Rpb24gZWVuKCBhcnJheSwgdmFsdWUsIGNvbXBhcmF0b3IgKXtcblx0Lyo7XG5cdFx0QG1ldGEtY29uZmlndXJhdGlvbjpcblx0XHRcdHtcblx0XHRcdFx0XCJhcnJheTpyZXF1aXJlZFwiOiBcIkFycmF5XCIsXG5cdFx0XHRcdFwidmFsdWU6cmVxdWlyZWRcIjogXCIqXCIsXG5cdFx0XHRcdFwiY29tcGFyYXRvclwiOiBcImZ1bmN0aW9uXCJcblx0XHRcdH1cblx0XHRAZW5kLW1ldGEtY29uZmlndXJhdGlvblxuXHQqL1xuXG5cdGlmKCAhZG91YnQoIGFycmF5LCBBU19BUlJBWSApICl7XG5cdFx0dGhyb3cgbmV3IEVycm9yKCBcImludmFsaWQgYXJyYXlcIiApO1xuXHR9XG5cblx0aWYoIHRydWx5KCBjb21wYXJhdG9yICkgJiYgIXByb3R5cGUoIGNvbXBhcmF0b3IsIEZVTkNUSU9OICkgKXtcblx0XHR0aHJvdyBuZXcgRXJyb3IoIFwiaW52YWxpZCBjb21wYXJhdG9yXCIgKTtcblx0fVxuXG5cdGNvbXBhcmF0b3IgPSBjb21wYXJhdG9yIHx8IGZ1bmN0aW9uIGNvbXBhcmF0b3IoIGl0ZW0sIHZhbHVlICl7XG5cdFx0aWYoIHByb3R5cGUoIGl0ZW0sIE9CSkVDVCApICYmIGtlaW4oIGl0ZW0sIFwidG9TdHJpbmdcIiApICYmIGtlaW4oIHZhbHVlLCBcInRvU3RyaW5nXCIgKSApe1xuXHRcdFx0cmV0dXJuIGl0ZW0udG9TdHJpbmcoICkgPT09IHZhbHVlLnRvU3RyaW5nKCApIHx8IGl0ZW0gPT09IHZhbHVlO1xuXHRcdH1cblxuXHRcdHJldHVybiBpdGVtID09PSB2YWx1ZTtcblx0fTtcblxuXHRyZXR1cm4gYXJyYXkuc29tZSggKCBpdGVtLCBpbmRleCApID0+IHtcblx0XHRyZXR1cm4gY29tcGFyYXRvciggaXRlbSwgdmFsdWUsIGluZGV4ICk7XG5cdH0gKTtcbn07XG5cbm1vZHVsZS5leHBvcnRzID0gZWVuO1xuIl19
+
+//# sourceMappingURL=een.support.js.map
