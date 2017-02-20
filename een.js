@@ -63,7 +63,7 @@ const kein = require( "kein" );
 const protype = require( "protype" );
 const truly = require( "truly" );
 
-//; @support-module:
+
 	//: @reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
 	Array.prototype.some=Array.prototype.some||function(evaluator,thisArg){"use strict";
 	if(!this)throw new TypeError("Array.prototype.some called on null or undefined");
@@ -71,7 +71,7 @@ const truly = require( "truly" );
 	if(!(evaluator=eval(evaluator)))throw new TypeError}var i;
 	if(void 0===thisArg){for(i in this)if(evaluator(this[i],i,this))return!0;return!1}
 	for(i in this)if(evaluator.call(thisArg,this[i],i,this))return!0;return!1};
-//; @end-support-module
+
 
 const een = function een( array, value, comparator ){
 	/*;
