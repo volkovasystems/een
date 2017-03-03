@@ -53,6 +53,7 @@
               			"doubt": "doubt",
               			"kein": "kein",
               			"protype": "protype",
+              			"stringe": "stringe",
               			"truly": "truly"
               		}
               	@end-include
@@ -61,6 +62,7 @@
 var doubt = require("doubt");
 var kein = require("kein");
 var protype = require("protype");
+var stringe = require("stringe");
 var truly = require("truly");
 
 
@@ -94,7 +96,7 @@ var een = function een(array, value, comparator) {
 
 	comparator = comparator || function comparator(item, value) {
 		if (protype(item, OBJECT) && kein(item, "toString") && kein(value, "toString")) {
-			return item.toString() === value.toString() || item === value;
+			return stringe(item) === stringe(value) || item === value;
 		}
 
 		return item === value;
