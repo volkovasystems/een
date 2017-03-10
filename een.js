@@ -95,7 +95,7 @@ const een = function een( array, value, comparator ){
 	}
 
 	comparator = comparator || function comparator( item, value ){
-		if( protype( item, OBJECT ) && kein( item, "toString" ) && kein( value, "toString" ) ){
+		if( protype( item, OBJECT ) && kein( "toString", item ) && kein( "toString", value ) ){
 			return stringe( item ) === stringe( value ) || item === value;
 		}
 
