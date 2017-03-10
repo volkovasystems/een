@@ -1,6 +1,6 @@
 {
   "name": "een",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Checks if array contains the given value.",
   "main": "een.js",
   "support": "een.support.js",
@@ -33,18 +33,18 @@
   "homepage": "https://github.com/volkovasystems/een#readme",
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "doubt": "^0.19.0",
-    "kein": "^0.12.0",
-    "protype": "^0.18.0",
-    "stringe": "^0.0.0",
-    "truly": "^0.14.0"
+    "doubt": "^0.21.0",
+    "kein": "^0.14.0",
+    "protype": "^0.19.0",
+    "stringe": "^0.1.0",
+    "truly": "^0.15.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
-    "source-map-loader": "^0.1.6",
+    "source-map-loader": "^0.2.0",
     "webpack": "^2.2.1"
   }
 }
