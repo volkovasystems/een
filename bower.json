@@ -1,6 +1,6 @@
 {
   "name": "een",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "Checks if array contains the given value.",
   "main": "een.deploy.js",
   "support": "een.support.js",
@@ -26,10 +26,10 @@
     "tests"
   ],
   "dependencies": {
-    "doubt": "^0.23.0",
+    "doubt": "^0.24.0",
     "kein": "^0.16.0",
     "protype": "^0.21.0",
-    "stringe": "^0.1.0",
+    "stringe": "^0.2.0",
     "truly": "^0.17.0"
   }
 }
