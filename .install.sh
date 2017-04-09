@@ -1,7 +1,6 @@
 yarn add \
 babel-runtime \
 doubt \
-kein \
 protype \
 stringe \
 truly \
@@ -16,7 +15,6 @@ webpack \
 --dev && \
 bower install \
 doubt \
-kein \
 protype \
 stringe \
 truly \

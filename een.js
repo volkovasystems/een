@@ -51,7 +51,6 @@
 	@include:
 		{
 			"doubt": "doubt",
-			"kein": "kein",
 			"protype": "protype",
 			"stringe": "stringe",
 			"truly": "truly"
@@ -60,26 +59,15 @@
 */
 
 const doubt = require( "doubt" );
-const kein = require( "kein" );
 const protype = require( "protype" );
 const stringe = require( "stringe" );
 const truly = require( "truly" );
-
-
-	//: @reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
-	Array.prototype.some=Array.prototype.some||function(evaluator,thisArg){"use strict";
-	if(!this)throw new TypeError("Array.prototype.some called on null or undefined");
-	if("function"!=typeof evaluator){if("string"!=typeof evaluator)throw new TypeError;
-	if(!(evaluator=eval(evaluator)))throw new TypeError}var i;
-	if(void 0===thisArg){for(i in this)if(evaluator(this[i],i,this))return!0;return!1}
-	for(i in this)if(evaluator.call(thisArg,this[i],i,this))return!0;return!1};
-
 
 const een = function een( array, value, comparator ){
 	/*;
 		@meta-configuration:
 			{
-				"array:required": "Array",
+				"array:required": Array,
 				"value:required": "*",
 				"comparator": "function"
 			}
@@ -95,16 +83,10 @@ const een = function een( array, value, comparator ){
 	}
 
 	comparator = comparator || function comparator( item, value ){
-		if( protype( item, OBJECT ) && kein( "toString", item ) && kein( "toString", value ) ){
-			return stringe( item ) === stringe( value ) || item === value;
-		}
-
-		return item === value;
+		return stringe( item ) === stringe( value ) || item === value;
 	};
 
-	return array.some( ( item, index ) => {
-		return comparator( item, value, index );
-	} );
+	return array.some( ( item, index ) => comparator( item, value, index ) );
 };
 
 module.exports = een;

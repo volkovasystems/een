@@ -51,7 +51,6 @@
               	@include:
               		{
               			"doubt": "doubt",
-              			"kein": "kein",
               			"protype": "protype",
               			"stringe": "stringe",
               			"truly": "truly"
@@ -60,26 +59,15 @@
               */
 
 var doubt = require("doubt");
-var kein = require("kein");
 var protype = require("protype");
 var stringe = require("stringe");
 var truly = require("truly");
-
-
-//: @reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
-Array.prototype.some = Array.prototype.some || function (evaluator, thisArg) {"use strict";
-	if (!this) throw new TypeError("Array.prototype.some called on null or undefined");
-	if ("function" != typeof evaluator) {if ("string" != typeof evaluator) throw new TypeError();
-		if (!(evaluator = eval(evaluator))) throw new TypeError();}var i;
-	if (void 0 === thisArg) {for (i in this) {if (evaluator(this[i], i, this)) return !0;}return !1;}
-	for (i in this) {if (evaluator.call(thisArg, this[i], i, this)) return !0;}return !1;};
-
 
 var een = function een(array, value, comparator) {
 	/*;
                                                   	@meta-configuration:
                                                   		{
-                                                  			"array:required": "Array",
+                                                  			"array:required": Array,
                                                   			"value:required": "*",
                                                   			"comparator": "function"
                                                   		}
@@ -95,16 +83,10 @@ var een = function een(array, value, comparator) {
 	}
 
 	comparator = comparator || function comparator(item, value) {
-		if (protype(item, OBJECT) && kein("toString", item) && kein("toString", value)) {
-			return stringe(item) === stringe(value) || item === value;
-		}
-
-		return item === value;
+		return stringe(item) === stringe(value) || item === value;
 	};
 
-	return array.some(function (item, index) {
-		return comparator(item, value, index);
-	});
+	return array.some(function (item, index) {return comparator(item, value, index);});
 };
 
 module.exports = een;
