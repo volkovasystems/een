@@ -1,6 +1,6 @@
 {
   "name": "een",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "Checks if array contains the given value.",
   "main": "een.js",
   "support": "een.support.js",
@@ -35,6 +35,7 @@
     "babel-runtime": "^6.23.0",
     "doubt": "^0.24.0",
     "protype": "^0.21.0",
+    "raze": "^0.25.0",
     "stringe": "^0.2.0",
     "truly": "^0.17.0"
   },

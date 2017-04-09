@@ -53,6 +53,7 @@
               			"doubt": "doubt",
               			"protype": "protype",
               			"stringe": "stringe",
+              			"raze": "raze",
               			"truly": "truly"
               		}
               	@end-include
@@ -61,6 +62,7 @@
 var doubt = require("doubt");
 var protype = require("protype");
 var stringe = require("stringe");
+var raze = require("raze");
 var truly = require("truly");
 
 var een = function een(array, value, comparator) {
@@ -82,11 +84,11 @@ var een = function een(array, value, comparator) {
 		throw new Error("invalid comparator");
 	}
 
-	comparator = comparator || function comparator(item, value) {
-		return stringe(item) === stringe(value) || item === value;
-	};
+	array = raze(array);
 
-	return array.some(function (item, index) {return comparator(item, value, index);});
+	comparator = comparator || function (element, value) {return stringe(element) === stringe(value) || element === value;};
+
+	return array.some(function (element, index) {return comparator(element, value, index);});
 };
 
 module.exports = een;
