@@ -46,13 +46,15 @@
               
               	@module-documentation:
               		Checks if array contains the given value.
+              
+              		Default comparator does shallow comparison only.
               	@end-module-documentation
               
               	@include:
               		{
               			"doubt": "doubt",
+              			"eqe": "eqe",
               			"protype": "protype",
-              			"stringe": "stringe",
               			"raze": "raze",
               			"truly": "truly"
               		}
@@ -60,8 +62,8 @@
               */
 
 var doubt = require("doubt");
+var eqe = require("eqe");
 var protype = require("protype");
-var stringe = require("stringe");
 var raze = require("raze");
 var truly = require("truly");
 
@@ -86,7 +88,7 @@ var een = function een(array, value, comparator) {
 
 	array = raze(array);
 
-	comparator = comparator || function (element, value) {return stringe(element) === stringe(value) || element === value;};
+	comparator = comparator || function (element, value) {return eqe(element, value);};
 
 	return array.some(function (element, index) {return comparator(element, value, index);});
 };

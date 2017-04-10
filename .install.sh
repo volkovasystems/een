@@ -1,8 +1,8 @@
 yarn add \
 babel-runtime \
 doubt \
+eqe \
 protype \
-stringe \
 raze \
 truly \
 --save && \
@@ -16,8 +16,8 @@ webpack \
 --dev && \
 bower install \
 doubt \
+eqe \
 protype \
-stringe \
 raze \
 truly \
 --save \
