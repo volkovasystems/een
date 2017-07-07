@@ -1,8 +1,32 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./een.deploy.js">
-		</script>
+		<title>een unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./een.deploy.js"></script>
 	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "een unit test", function( assert ) {
+
+				assert.equal( een( [ 1, 2, 3 ], 2 ), true, "should be true" );
+
+				assert.equal( !een( [ 1, 2, 3 ], 4 ), true, "should be true" );
+
+				assert.equal( !een( [ 1, 2, 3, [ 4 ] ], [ 4 ] ), true, "should be true" );
+
+				assert.equal( een( [ ] ), false, "should be false" );
+
+			} );
+		</script>
+	</body>
 </html>

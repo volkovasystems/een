@@ -34,10 +34,11 @@
 			"file": "een.js",
 			"module": "een",
 			"author": "Richeve S. Bebedor",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-			],
 			"eMail": "richeve.bebedor@gmail.com",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+				"Vinse Vinalon <vinsevinalon@gmail.com>"
+			],
 			"repository": "https://github.com/volkovasystems/een.git",
 			"test": "een-test.js",
 			"global": true
@@ -54,7 +55,6 @@
 		{
 			"doubt": "doubt",
 			"eqe": "eqe",
-			"protype": "protype",
 			"raze": "raze",
 			"truly": "truly"
 		}
@@ -63,7 +63,6 @@
 
 const doubt = require( "doubt" );
 const eqe = require( "eqe" );
-const protype = require( "protype" );
 const raze = require( "raze" );
 const truly = require( "truly" );
 
@@ -82,7 +81,7 @@ const een = function een( array, value, comparator ){
 		throw new Error( "invalid array" );
 	}
 
-	if( truly( comparator ) && !protype( comparator, FUNCTION ) ){
+	if( truly( comparator ) && typeof comparator != "function" ){
 		throw new Error( "invalid comparator" );
 	}
 
