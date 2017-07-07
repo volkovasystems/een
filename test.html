@@ -18,6 +18,13 @@
 		<script type="application/javascript">
 			QUnit.test( "een unit test", function( assert ) {
 
+				assert.equal( een( [ 1, 2, 3 ], 2 ), true, "should be true" );
+
+				assert.equal( !een( [ 1, 2, 3 ], 4 ), true, "should be true" );
+
+				assert.equal( !een( [ 1, 2, 3, [ 4 ] ], [ 4 ] ), true, "should be true" );
+
+				assert.equal( een( [ ] ), false, "should be false" );
 
 			} );
 		</script>
