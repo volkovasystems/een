@@ -7,7 +7,7 @@
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
     "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-	"Vinse Vinalon <vinsevinalon@gmail.com>"
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -27,5 +27,9 @@
     "tests"
   ],
   "dependencies": {
+    "doubt": "^0.29.0",
+    "eqe": "^0.3.0",
+    "raze": "^0.32.0",
+    "truly": "^0.19.0"
   }
 }
