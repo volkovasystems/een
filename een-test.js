@@ -21,4 +21,8 @@ assert.deepEqual( een( target, 7 ), true, "should return true" );
 
 assert.equal( een( [ ] ), false, "should return false" );
 
+assert.equal( een( "hello", "hello" ), true, "should return true" );
+
+assert.equal( een( "hello", "world" ), false, "should return false" );
+
 console.log( "ok" );

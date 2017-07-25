@@ -53,7 +53,6 @@
 
 	@include:
 		{
-			"doubt": "doubt",
 			"eqe": "eqe",
 			"raze": "raze",
 			"truly": "truly"
@@ -61,7 +60,6 @@
 	@end-include
 */
 
-const doubt = require( "doubt" );
 const eqe = require( "eqe" );
 const raze = require( "raze" );
 const truly = require( "truly" );
@@ -76,10 +74,6 @@ const een = function een( array, value, comparator ){
 			}
 		@end-meta-configuration
 	*/
-
-	if( !doubt( array, AS_ARRAY ) ){
-		throw new Error( "invalid array" );
-	}
 
 	if( truly( comparator ) && typeof comparator != "function" ){
 		throw new Error( "invalid comparator" );

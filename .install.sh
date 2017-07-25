@@ -1,6 +1,5 @@
 yarn add \
 babel-runtime \
-doubt \
 eqe \
 raze \
 truly \
@@ -14,7 +13,6 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
-doubt \
 eqe \
 raze \
 truly \
