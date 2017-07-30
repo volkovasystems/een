@@ -1,44 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>een unit test</title>
+		<meta charset="utf-8">
 
-		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+		<title>test:een</title>
 
-		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-
-		<script type="application/javascript" src="./een.deploy.js"></script>
-
-		<script type="application/javascript" src="https://unpkg.com/eqe/eqe.deploy.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css"/>
 	</head>
 
 	<body>
-		<div id="qunit"></div>
+		<div id="mocha"></div>
 
-		<div id="qunit-fixture"></div>
+		<script type="application/javascript" src="https://unpkg.com/mocha/mocha.js"></script>
 
 		<script type="application/javascript">
-			QUnit.test( "een unit test", function( assert ) {
+			mocha.setup( "bdd" );
+		</script>
 
-				assert.equal( een( [ 1, 2, 3 ], 2 ), true, "should return true" );
+		<script type="application/javascript" src="./test.deploy.js"></script>
 
-				assert.equal( !een( [ 1, 2, 3 ], 4 ), true, "should return true" );
-
-				assert.equal( !een( [ 1, 2, 3, [ 4 ] ], [ 4 ] ), true, "should return true" );
-
-				let source = [ 1, 2, 3, 7 ];
-				let target = [ 1, 2, 3, 4, 5, 6 ];
-
-				source.forEach( ( value ) => {
-					!een( target, value, ( element, value ) => eqe( element, value ) ) &&
-					target.push( value );
-				} );
-
-				assert.deepEqual( een( target, 7 ), true, "should return true" );
-
-				assert.equal( een( [ ] ), false, "should return false" );
-
-			} );
+		<script type="application/javascript">
+			mocha.run( );
 		</script>
 	</body>
 </html>
