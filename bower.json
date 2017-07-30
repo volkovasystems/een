@@ -1,6 +1,6 @@
 {
 	"name": "een",
-	"version": "0.23.0",
+	"version": "0.24.0",
 	"description": "Checks if array contains the given value.",
 	"main": "een.deploy.js",
 	"support": "een.support.js",
