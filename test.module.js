@@ -59,6 +59,7 @@ const assert = require( "should" );
 
 //: @server:
 const een = require( "./een.js" );
+const eqe = require( "eqe" );
 //: @end-server
 
 //: @client:
