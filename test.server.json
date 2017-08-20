@@ -1,102 +1,102 @@
 {
-	"stats": {
-		"suites": 7,
-		"tests": 6,
-		"passes": 6,
-		"pending": 0,
-		"failures": 0,
-		"start": "2017-07-30T04:41:11.806Z",
-		"end": "2017-07-30T04:41:11.812Z",
-		"duration": 6
-	},
-	"tests": [
-		{
-			"title": "should be equal to true",
-			"fullTitle": "een `een( [ 1, 2, 3 ], 2 )` should be equal to true",
-			"duration": 1,
-			"currentRetry": 0,
-			"err": {}
-		},
-		{
-			"title": "should be equal to true",
-			"fullTitle": "een `!een( [ 1, 2, 3 ], 4 )` should be equal to true",
-			"duration": 0,
-			"currentRetry": 0,
-			"err": {}
-		},
-		{
-			"title": "should return true",
-			"fullTitle": "een `een with value and comparator` should return true",
-			"duration": 0,
-			"currentRetry": 0,
-			"err": {}
-		},
-		{
-			"title": "should be equal to false",
-			"fullTitle": "een `een( [ ] )` should be equal to false",
-			"duration": 1,
-			"currentRetry": 0,
-			"err": {}
-		},
-		{
-			"title": "should be equal to true",
-			"fullTitle": "een `een( 'hello', 'hello' )` should be equal to true",
-			"duration": 0,
-			"currentRetry": 0,
-			"err": {}
-		},
-		{
-			"title": "should be equal to false",
-			"fullTitle": "een `een( 'hello', 'world' )` should be equal to false",
-			"duration": 0,
-			"currentRetry": 0,
-			"err": {}
-		}
-	],
-	"pending": [],
-	"failures": [],
-	"passes": [
-		{
-			"title": "should be equal to true",
-			"fullTitle": "een `een( [ 1, 2, 3 ], 2 )` should be equal to true",
-			"duration": 1,
-			"currentRetry": 0,
-			"err": {}
-		},
-		{
-			"title": "should be equal to true",
-			"fullTitle": "een `!een( [ 1, 2, 3 ], 4 )` should be equal to true",
-			"duration": 0,
-			"currentRetry": 0,
-			"err": {}
-		},
-		{
-			"title": "should return true",
-			"fullTitle": "een `een with value and comparator` should return true",
-			"duration": 0,
-			"currentRetry": 0,
-			"err": {}
-		},
-		{
-			"title": "should be equal to false",
-			"fullTitle": "een `een( [ ] )` should be equal to false",
-			"duration": 1,
-			"currentRetry": 0,
-			"err": {}
-		},
-		{
-			"title": "should be equal to true",
-			"fullTitle": "een `een( 'hello', 'hello' )` should be equal to true",
-			"duration": 0,
-			"currentRetry": 0,
-			"err": {}
-		},
-		{
-			"title": "should be equal to false",
-			"fullTitle": "een `een( 'hello', 'world' )` should be equal to false",
-			"duration": 0,
-			"currentRetry": 0,
-			"err": {}
-		}
-	]
+  "stats": {
+    "suites": 7,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2017-08-20T03:26:45.103Z",
+    "end": "2017-08-20T03:26:45.123Z",
+    "duration": 20
+  },
+  "tests": [
+    {
+      "title": "should be equal to true",
+      "fullTitle": "een `een( [ 1, 2, 3 ], 2 )` should be equal to true",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should be equal to true",
+      "fullTitle": "een `!een( [ 1, 2, 3 ], 4 )` should be equal to true",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should return true",
+      "fullTitle": "een `een with value and comparator` should return true",
+      "duration": 6,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should be equal to false",
+      "fullTitle": "een `een( [ ] )` should be equal to false",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should be equal to true",
+      "fullTitle": "een `een( 'hello', 'hello' )` should be equal to true",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should be equal to false",
+      "fullTitle": "een `een( 'hello', 'world' )` should be equal to false",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [],
+  "passes": [
+    {
+      "title": "should be equal to true",
+      "fullTitle": "een `een( [ 1, 2, 3 ], 2 )` should be equal to true",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should be equal to true",
+      "fullTitle": "een `!een( [ 1, 2, 3 ], 4 )` should be equal to true",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should return true",
+      "fullTitle": "een `een with value and comparator` should return true",
+      "duration": 6,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should be equal to false",
+      "fullTitle": "een `een( [ ] )` should be equal to false",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should be equal to true",
+      "fullTitle": "een `een( 'hello', 'hello' )` should be equal to true",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should be equal to false",
+      "fullTitle": "een `een( 'hello', 'world' )` should be equal to false",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ]
 }
