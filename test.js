@@ -83,7 +83,7 @@ describe( "een", ( ) => {
 	} );
 
 	describe( "`een with value and comparator`", ( ) => {
-		it( "should return true", ( ) => {
+		it( "should be equal to true", ( ) => {
 
 			let source = [ 1, 2, 3, 7 ];
 			let target = [ 1, 2, 3, 4, 5, 6 ];

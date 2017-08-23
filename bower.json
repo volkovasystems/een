@@ -25,5 +25,10 @@
 		"bower_components",
 		"test",
 		"tests"
-	]
+	],
+	"dependencies": {
+		"eqe": "^0.5.0",
+		"raze": "^0.34.0",
+		"truly": "^0.20.0"
+	}
 }
