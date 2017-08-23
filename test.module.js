@@ -180,46 +180,77 @@ describe( "een", ( ) => {
 
 describe( "een", ( ) => {
 
-	const testBridge = path.resolve(__dirname, "bridge.html");
-	const bridgeURL = "file://" + testBridge;
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
-	describe( "een", ( ) => {
+	describe( "`een( [ 1, 2, 3 ], 2 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
 
-		describe( "`een( [ 1, 2, 3 ], 2 )`", ( ) => {
-			it( "should be equal to true", ( ) => {
-				let result = browser.url( bridgeURL ).execute( ( ) => een( [ 1, 2, 3 ], 2 ) );
-				assert.equal( result.value, true );
-			} );
+			let result = browser.url( bridgeURL ).execute( ( ) => een( [ 1, 2, 3 ], 2 ) );
+			assert.equal( result.value, true );
+
 		} );
+	} );
 
-		describe( "`!een( [ 1, 2, 3 ], 4 )`", ( ) => {
-			it( "should be equal to true", ( ) => {
-				let result = browser.url( bridgeURL ).execute( ( ) => !een( [ 1, 2, 3 ], 4 ) );
-				assert.equal( result.value, true );
-			} );
+	describe( "`!een( [ 1, 2, 3 ], 4 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute( ( ) => !een( [ 1, 2, 3 ], 4 ) );
+			assert.equal( result.value, true );
+
 		} );
+	} );
 
-		describe( "`een( [ ] )`", ( ) => {
-			it( "should be equal to false", ( ) => {
-				let result = browser.url( bridgeURL ).execute( ( ) => een( [ ] ) );
-				assert.equal( result.value, false );
-			} );
+	describe( "`een with value and comparator`", ( ) => {
+		it( "should return true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+
+					let source = [ 1, 2, 3, 7 ];
+					let target = [ 1, 2, 3, 4, 5, 6 ];
+					//: @ignore:
+					source.forEach( ( value ) => {
+						!een( target, value, ( element, value ) => eqe( element, value ) ) &&
+						target.push( value );
+					} );
+					//: @end-ignore
+					return een( target, 7 );
+
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
 		} );
+	} );
 
-		describe( "`een( 'hello', 'hello' )`", ( ) => {
-			it( "should be equal to true", ( ) => {
-				let result = browser.url( bridgeURL ).execute( ( ) => een( "hello", "hello" ) );
-				assert.equal( result.value, true );
-			} );
+	describe( "`een( [ ] )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute( ( ) => een( [ ] ) );
+			assert.equal( result.value, false );
+
 		} );
+	} );
 
-		describe( "`een( 'hello', 'world' )`", ( ) => {
-			it( "should be equal to false", ( ) => {
-				let result = browser.url( bridgeURL ).execute( ( ) => een( "hello", "world" ) );
-				assert.equal( result.value, false );
-			} );
+	describe( "`een( 'hello', 'hello' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute( ( ) => een( "hello", "hello" ) );
+			assert.equal( result.value, true );
+
 		} );
+	} );
 
+	describe( "`een( 'hello', 'world' )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute( ( ) => een( "hello", "world" ) );
+			assert.equal( result.value, false );
+
+		} );
 	} );
 
 } );
