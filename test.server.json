@@ -5,9 +5,9 @@
 		"passes": 6,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-23T04:41:29.233Z",
-		"end": "2017-08-23T04:41:29.240Z",
-		"duration": 7
+		"start": "2017-08-23T04:44:26.868Z",
+		"end": "2017-08-23T04:44:26.874Z",
+		"duration": 6
 	},
 	"tests": [
 		{
@@ -34,7 +34,7 @@
 		{
 			"title": "should be equal to false",
 			"fullTitle": "een `een( [ ] )` should be equal to false",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -80,7 +80,7 @@
 		{
 			"title": "should be equal to false",
 			"fullTitle": "een `een( [ ] )` should be equal to false",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
