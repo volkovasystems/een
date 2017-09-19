@@ -1,25 +1,46 @@
 {
 	"stats": {
-		"suites": 7,
-		"tests": 6,
-		"passes": 6,
+		"suites": 10,
+		"tests": 9,
+		"passes": 9,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-23T04:44:26.868Z",
-		"end": "2017-08-23T04:44:26.874Z",
-		"duration": 6
+		"start": "2017-09-19T05:51:07.122Z",
+		"end": "2017-09-19T05:51:07.129Z",
+		"duration": 7
 	},
 	"tests": [
 		{
 			"title": "should be equal to true",
-			"fullTitle": "een `een( [ 1, 2, 3 ], 2 )` should be equal to true",
+			"fullTitle": "een `een( [ 1, 2, 3, 'hello' ], 'hello' )` should be equal to true",
 			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should be equal to true",
+			"fullTitle": "een `een( [ 1, 2, 3, true ], true )` should be equal to true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "een `een( [ 1, 2, 3 ], 2 )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
 			"fullTitle": "een `!een( [ 1, 2, 3 ], 4 )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "een `een( [ 1, 2, 3, Symbol.for( 'hello' ) ], Symbol.for( 'hello' ) )` should be equal to true",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -58,14 +79,35 @@
 	"passes": [
 		{
 			"title": "should be equal to true",
-			"fullTitle": "een `een( [ 1, 2, 3 ], 2 )` should be equal to true",
+			"fullTitle": "een `een( [ 1, 2, 3, 'hello' ], 'hello' )` should be equal to true",
 			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should be equal to true",
+			"fullTitle": "een `een( [ 1, 2, 3, true ], true )` should be equal to true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "een `een( [ 1, 2, 3 ], 2 )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
 			"fullTitle": "een `!een( [ 1, 2, 3 ], 4 )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "een `een( [ 1, 2, 3, Symbol.for( 'hello' ) ], Symbol.for( 'hello' ) )` should be equal to true",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
