@@ -49,13 +49,13 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"een": "een"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const een = require( "./een.js" );
@@ -74,6 +74,18 @@ const path = require( "path" );
 
 describe( "een", ( ) => {
 
+	describe( "`een( [ 1, 2, 3, 'hello' ], 'hello' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( een( [ 1, 2, 3, "hello" ], "hello" ), true );
+		} );
+	} );
+
+	describe( "`een( [ 1, 2, 3, true ], true )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( een( [ 1, 2, 3, true ], true ), true );
+		} );
+	} );
+
 	describe( "`een( [ 1, 2, 3 ], 2 )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( een( [ 1, 2, 3 ], 2 ), true );
@@ -83,6 +95,12 @@ describe( "een", ( ) => {
 	describe( "`!een( [ 1, 2, 3 ], 4 )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( !een( [ 1, 2, 3 ], 4 ), true );
+		} );
+	} );
+
+	describe( "`een( [ 1, 2, 3, Symbol.for( 'hello' ) ], Symbol.for( 'hello' ) )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( een( [ 1, 2, 3, Symbol.for( "hello" ) ], Symbol.for( "hello" ) ), true );
 		} );
 	} );
 
@@ -127,6 +145,18 @@ describe( "een", ( ) => {
 
 describe( "een", ( ) => {
 
+	describe( "`een( [ 1, 2, 3, 'hello' ], 'hello' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( een( [ 1, 2, 3, "hello" ], "hello" ), true );
+		} );
+	} );
+
+	describe( "`een( [ 1, 2, 3, true ], true )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( een( [ 1, 2, 3, true ], true ), true );
+		} );
+	} );
+
 	describe( "`een( [ 1, 2, 3 ], 2 )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( een( [ 1, 2, 3 ], 2 ), true );
@@ -136,6 +166,12 @@ describe( "een", ( ) => {
 	describe( "`!een( [ 1, 2, 3 ], 4 )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( !een( [ 1, 2, 3 ], 4 ), true );
+		} );
+	} );
+
+	describe( "`een( [ 1, 2, 3, Symbol.for( 'hello' ) ], Symbol.for( 'hello' ) )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( een( [ 1, 2, 3, Symbol.for( "hello" ) ], Symbol.for( "hello" ) ), true );
 		} );
 	} );
 
