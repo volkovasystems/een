@@ -218,6 +218,36 @@ describe( "een", ( ) => {
 
 	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
+	describe( "`een( [ 1, 2, 3, 'hello' ], 'hello' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return een( [ 1, 2, 3, "hello" ], "hello" );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`een( [ 1, 2, 3, true ], true )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return een( [ 1, 2, 3, true ], true );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
 	describe( "`een( [ 1, 2, 3 ], 2 )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 
@@ -229,9 +259,24 @@ describe( "een", ( ) => {
 
 	describe( "`!een( [ 1, 2, 3 ], 4 )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-
 			let result = browser.url( bridgeURL ).execute( ( ) => !een( [ 1, 2, 3 ], 4 ) );
 			assert.equal( result.value, true );
+
+		} );
+	} );
+
+	describe( "`een( [ 1, 2, 3, Symbol.for( 'hello' ) ], Symbol.for( 'hello' ) )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return een( [ 1, 2, 3, Symbol.for( "hello" ) ], Symbol.for( "hello" ) );
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, true );
 
 		} );
 	} );
