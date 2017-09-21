@@ -1,12 +1,12 @@
 {
 	"stats": {
-		"suites": 10,
-		"tests": 9,
-		"passes": 9,
+		"suites": 11,
+		"tests": 10,
+		"passes": 10,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-09-19T05:51:07.122Z",
-		"end": "2017-09-19T05:51:07.129Z",
+		"start": "2017-09-21T06:43:11.457Z",
+		"end": "2017-09-21T06:43:11.464Z",
 		"duration": 7
 	},
 	"tests": [
@@ -20,7 +20,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "een `een( [ 1, 2, 3, true ], true )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -47,15 +47,22 @@
 		},
 		{
 			"title": "should be equal to true",
-			"fullTitle": "een `een with value and comparator` should be equal to true",
+			"fullTitle": "een `een( [ 1, 2, 3, function hello( ){ } ], function hello( ){ } )` should be equal to true",
 			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "een `een with value and comparator` should be equal to true",
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should be equal to false",
 			"fullTitle": "een `een( [ ] )` should be equal to false",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -87,7 +94,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "een `een( [ 1, 2, 3, true ], true )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -114,15 +121,22 @@
 		},
 		{
 			"title": "should be equal to true",
-			"fullTitle": "een `een with value and comparator` should be equal to true",
+			"fullTitle": "een `een( [ 1, 2, 3, function hello( ){ } ], function hello( ){ } )` should be equal to true",
 			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "een `een with value and comparator` should be equal to true",
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should be equal to false",
 			"fullTitle": "een `een( [ ] )` should be equal to false",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},

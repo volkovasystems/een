@@ -100,6 +100,12 @@ describe( "een", ( ) => {
 		} );
 	} );
 
+	describe( "`een( [ 1, 2, 3, function hello( ){ } ], function hello( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( een( [ 1, 2, 3, function hello( ){ } ], function hello( ){ } ), true );
+		} );
+	} );
+
 	describe( "`een with value and comparator`", ( ) => {
 		it( "should be equal to true", ( ) => {
 
