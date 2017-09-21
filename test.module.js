@@ -104,6 +104,12 @@ describe( "een", ( ) => {
 		} );
 	} );
 
+	describe( "`een( [ 1, 2, 3, function hello( ){ } ], function hello( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( een( [ 1, 2, 3, function hello( ){ } ], function hello( ){ } ), true );
+		} );
+	} );
+
 	describe( "`een with value and comparator`", ( ) => {
 		it( "should be equal to true", ( ) => {
 
@@ -172,6 +178,12 @@ describe( "een", ( ) => {
 	describe( "`een( [ 1, 2, 3, Symbol.for( 'hello' ) ], Symbol.for( 'hello' ) )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( een( [ 1, 2, 3, Symbol.for( "hello" ) ], Symbol.for( "hello" ) ), true );
+		} );
+	} );
+
+	describe( "`een( [ 1, 2, 3, function hello( ){ } ], function hello( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( een( [ 1, 2, 3, function hello( ){ } ], function hello( ){ } ), true );
 		} );
 	} );
 
@@ -276,6 +288,23 @@ describe( "een", ( ) => {
 
 			).value;
 			//: @end-ignore
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`een( [ 1, 2, 3, function hello( ){ } ], function hello( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return een( [ 1, 2, 3, function hello( ){ } ], function hello( ){ } );
+				}
+
+			).value;
+			//: @end-ignore
+
 			assert.equal( result, true );
 
 		} );
