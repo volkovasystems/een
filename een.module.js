@@ -75,15 +75,27 @@ const een = function een( array, value, comparator ){
 		@end-meta-configuration
 	*/
 
-	if( truly( comparator ) && typeof comparator != "function" ){
+	if(
+			truly( comparator )
+		&&	typeof comparator != "function"
+	){
 		throw new Error( "invalid comparator" );
 	}
 
 	array = raze( array );
 
-	comparator = comparator || ( ( element, value ) => eqe( element, value ) );
+	comparator = (
+			comparator
+		||	(
+				( element, value ) => eqe( element, value )
+			)
+	);
 
-	return array.some( ( element, index ) => comparator( element, value, index ) );
+	return (
+		array.some(
+			( element, index ) => comparator( element, value, index )
+		)
+	);
 };
 
 module.exports = een;
